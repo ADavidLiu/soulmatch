@@ -137,6 +137,10 @@ li {
     .paragraph, p,
     li {
       font-size: 1.1875rem; } }
+  @media screen and (min-width: 992px) {
+    .paragraph, p,
+    li {
+      font-size: 1rem; } }
 
 @media screen and (min-width: 992px) {
   .matching-wrapper {
@@ -156,6 +160,9 @@ li {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start; }
+  @media screen and (min-width: 992px) {
+    .matching {
+      padding: 3.125rem 0 5rem 0; } }
   .matching__nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -171,7 +178,8 @@ li {
       .matching__nav {
         width: 100%;
         max-width: 430px;
-        margin: 0 auto; } }
+        margin: 0 auto;
+        background-color: #ededed; } }
     .matching__nav-item {
       -webkit-box-flex: 1;
       -ms-flex: 1 1 0px;
@@ -416,7 +424,9 @@ li {
       .matching__actions {
         width: 100%;
         max-width: 430px;
-        margin: 0 auto; } }
+        margin: 0 auto;
+        border-bottom-left-radius: .5rem;
+        border-bottom-right-radius: .5rem; } }
     .matching__actions-inner {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -446,6 +456,9 @@ li {
       @media screen and (min-width: 768px) {
         .matching__actions-item {
           padding: 1.5rem 0; } }
+      @media screen and (min-width: 992px) {
+        .matching__actions-item {
+          padding: 1rem 0; } }
       .matching__actions-item-icon {
         height: 3.125rem;
         width: auto;
@@ -454,6 +467,9 @@ li {
         @media screen and (min-width: 768px) {
           .matching__actions-item-icon {
             height: 2.5rem; } }
+        @media screen and (min-width: 992px) {
+          .matching__actions-item-icon {
+            height: 1.875rem; } }
 
 .container {
   padding: 0 30px; }
@@ -480,6 +496,13 @@ li {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between; }
+  .header__logo {
+    display: none; }
+    @media screen and (min-width: 992px) {
+      .header__logo {
+        display: inline-block; } }
+  .header__nav {
+    display: none; }
   .header__btn {
     background: transparent;
     margin: 0;
@@ -555,6 +578,16 @@ li {
           -webkit-transform: translate(50%, -50%);
           -ms-transform: translate(50%, -50%);
           transform: translate(50%, -50%); } }
+
+.footer {
+  display: none; }
+  @media screen and (min-width: 992px) {
+    .footer {
+      display: block;
+      background-color: #ffffff;
+      padding: 2.5rem 0;
+      -webkit-box-shadow: 0px 0px 35px 0px rgba(14, 14, 15, 0.15);
+      box-shadow: 0px 0px 35px 0px rgba(14, 14, 15, 0.15); } }
 
 .nav {
   display: none; }

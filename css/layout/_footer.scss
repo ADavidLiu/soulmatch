@@ -1,0 +1,9 @@
+.footer {
+    display: none;
+    @include atLarge {
+        display: block;
+        background-color: $color-white;
+        padding: 2.5rem 0;
+        box-shadow: 0px 0px 35px 0px rgba($color-black, .15);
+    }
+}

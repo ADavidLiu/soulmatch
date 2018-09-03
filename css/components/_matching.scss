@@ -9,6 +9,9 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
+    @include atLarge {
+        padding: 3.125rem 0 5rem 0;
+    }
 
     &__nav {
         display: flex;
@@ -19,6 +22,7 @@
             width: 100%;
             max-width: 430px;
             margin: 0 auto;
+            background-color: $color-gray-alt-7;
         }
 
         &-item {
@@ -256,6 +260,8 @@
             width: 100%;
             max-width: 430px;
             margin: 0 auto;
+            border-bottom-left-radius: .5rem;
+            border-bottom-right-radius: .5rem;
         }
 
         &-inner {
@@ -276,6 +282,9 @@
             @include atMedium {
                 padding: 1.5rem 0;
             }
+            @include atLarge {
+                padding: 1rem 0;
+            }
 
             &-icon {
                 height: 3.125rem;
@@ -283,6 +292,9 @@
                 filter: drop-shadow(0 5px 3px rgba($color-black-full, .2));
                 @include atMedium {
                     height: 2.5rem;
+                }
+                @include atLarge {
+                    height: 1.875rem;
                 }
             }
         }

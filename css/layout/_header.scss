@@ -1,0 +1,101 @@
+.header {
+    background-color: $color-white;
+    padding: 2.291rem 0;
+    @include atMedium {
+        padding: 1.25rem 0;
+    }
+    @include atLarge {
+        padding: 1rem 0;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__btn {
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        @include atLarge {
+            display: none;
+        }
+
+        &-line {
+            height: 3px;
+            width: 2.9167rem;
+            background-color: $color-gray-drk;
+            border-radius: 15px;
+            display: block;
+            @include atMedium {
+                height: 6px;
+                border-radius: 2rem;
+            }
+
+            & + & {
+                margin-top: .583rem;
+                @include atMedium {
+                    margin-top: .5rem;
+                }
+            }
+
+            &:nth-child(2) {
+                width: 2.25rem;
+            }
+
+            &:last-child {
+                width: 1.833rem;
+            }
+        }
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &__swipes {
+        background-color: $color-accent;
+        border-radius: .5rem;
+        padding: .75rem 1.4583rem;
+    }
+
+    &__messages {
+        display: inline-block;
+        position: relative;
+        margin-left: 3rem;
+        @include atMedium {
+            margin-left: 1.25rem;
+        }
+
+        &-icon {
+            width: 2.5rem;
+            @include atMedium {
+                width: 2.375rem;
+            }
+        }
+
+        &-notification {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(25%, -25%);
+            border-radius: 50%;
+            background-color: $color-accent-2;
+            height: 1.2rem;
+            width: 1.2rem;
+            min-height: 1.2rem;
+            min-width: 1.2rem;
+            border: 2px solid $color-white;
+            @include atMedium {
+                height: 1.25rem;
+                width: 1.25rem;
+                border-width: 3px;
+                transform: translate(50%, -50%);
+            }
+        }
+    }
+}

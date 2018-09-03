@@ -1,0 +1,12 @@
+.nav {
+    display: none;
+    @include atLarge {
+        display: block;
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+}

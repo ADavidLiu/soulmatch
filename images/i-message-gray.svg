@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="61" height="61" viewBox="0 0 61 61">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #9d9d9d;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="i-message-gray.svg" class="cls-1" d="M1059,145h-48c-3.37,0-7,2.634-7,6v55l13-12h42a5.932,5.932,0,0,0,6-6V152C1065,148.634,1062.37,145,1059,145Zm-42,22h36v4h-36v-4Zm24,13h-24v-4h24v4Zm12-18h-36v-4h36v4Z" transform="translate(-1004 -145)"/>
+</svg>

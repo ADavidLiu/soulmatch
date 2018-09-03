@@ -1,0 +1,74 @@
+// Color
+.u-color {
+    &-white {
+        color: $color-white;
+    }
+
+    &-gradient {
+        background: linear-gradient(to bottom, $color-primary-drk, $color-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+
+// Font weight
+.u-weight {
+    &-lgt {
+        font-weight: 300;
+    }
+
+    &-reg {
+        font-weight: 400;
+    }
+
+    &-med {
+        font-weight: 500;
+    }
+
+    &-bld {
+        font-weight: 700;
+    }
+}
+
+
+// Color
+.u-color {
+    &-dark {
+        &-alt {
+            color: $color-dark-alt;
+        }
+    }
+
+    &-gray {
+        &-alt {
+            &-5 {
+                color: $color-gray-alt-5;
+            }
+        }
+    }
+}
+
+
+// Cursor
+.u-cursor {
+    &-pointer {
+        cursor: pointer;
+    }
+}
+
+
+// Text transform
+.u-uppercase {
+    text-transform: uppercase;
+}
+
+
+// Margin
+.u-margin {
+    &-bottom {
+        &-smallest {
+            margin-bottom: 5px;
+        }
+    }
+}

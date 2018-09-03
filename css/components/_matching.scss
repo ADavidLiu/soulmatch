@@ -1,0 +1,290 @@
+.matching-wrapper {
+    @include atLarge {
+        background-color: $color-gray-alt-7;
+    }
+}
+
+.matching {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $color-gray;
+        @include atLarge {
+            width: 100%;
+            max-width: 430px;
+            margin: 0 auto;
+        }
+
+        &-item {
+            flex: 1 1 0;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        &-link {
+            display: inline-block;
+            padding: 3rem 0;
+            @include linkStates($color-gray-drk, none);
+            @include atMedium {
+                padding: 1.25rem 0;
+            }
+
+            &--active {
+                font-weight: 700;
+                @include linkStates($color-primary, none);
+                @extend .u-color-gradient;
+            }
+        }
+    }
+
+    &__slider {
+        flex: 1;
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        @include atMedium {
+            height: 40.625rem;
+        }
+        @include atLarge {
+            width: 100%;
+            max-width: 430px;
+            margin: 0 auto;
+        }
+
+        &-item {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &__profile {
+        height: 100%;
+        position: relative;
+
+        &-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &-media {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            &-inner {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                @include atMedium {
+                    background-color: $color-gray-alt-6;
+                    display: block;
+                    width: auto;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+
+            &-header {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 30%;
+                background-image: linear-gradient(to bottom, $color-black-full 5%, transparent);
+                text-align: right;
+                padding: 2.083rem 0;
+                @include atMedium {
+                    background-image: none;
+                }
+
+                &:before {
+                    @include atMedium {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: -50vw;
+                        width: 200vw;
+                        height: 100%;
+                        pointer-events: none;
+                        background-image: linear-gradient(to bottom, rgba($color-black-full, .65) 5%, transparent);
+                    }
+                }
+
+                * {
+                    @include atMedium {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            &-footer {
+                position: absolute;
+                z-index: 1;
+                text-align: right;
+                bottom: 7.25rem;
+                transform: translateY(-100%);
+                left: 0;
+                width: 100%;
+                @include atMedium {
+                    bottom: 2rem;
+                    padding-bottom: 1.5rem;
+                }
+
+                &:before {
+                    @include atMedium {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: -50vw;
+                        width: 150vw;
+                        height: 20vh;
+                        background-image: linear-gradient(to top, rgba($color-black-full, .65) 5%, transparent);
+                    }
+                }
+            }
+        }
+
+        &-count {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 5rem;
+            width: 5rem;
+            border: 1px solid $color-white;
+            border-radius: 3px;
+            background-color: rgba($color-black-full, .2);
+            @include atMedium {
+                border-width: 2px;
+                height: 3.125rem;
+                width: 3.125rem;
+                border-radius: 8px;
+                position: relative;
+            }
+        }
+
+        &-img {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center top;
+            height: 100%;
+            background-color: $color-gray-alt-6;
+            position: relative;
+            @include atMedium {
+                background-size: contain;
+                background-image: none !important;
+            }
+            @include atLarge {
+                background-image: initial !important;
+            }
+
+            &-tag {
+                height: 100%;
+                width: auto;
+                display: block;
+                margin: 0 auto;
+                display: none;
+                @include atMedium {
+                    display: block;
+                }
+            }
+        }
+
+        &-info {
+            background-color: rgba($color-white, .9);
+            padding: 2.708rem 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            @include atMedium {
+                padding: 1.25rem 0;
+                background-color: $color-white;
+            }
+
+            &-inner {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 150%;
+                background-image: linear-gradient(to top, $color-black-full 5%, transparent);
+                transform: translateY(-100%);
+                pointer-events: none;
+                @include atMedium {
+                    display: none;
+                }
+            }
+        }
+
+        &-message {
+            width: 3.333rem;
+            cursor: pointer;
+            @include atMedium {
+                width: 2.5rem;
+            }
+        }
+    }
+
+    &__actions {
+        background-image: linear-gradient(to bottom, $color-primary-drk, $color-primary);
+        @include atLarge {
+            width: 100%;
+            max-width: 430px;
+            margin: 0 auto;
+        }
+
+        &-inner {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            @include atMedium {
+                justify-content: space-around;
+            }
+        }
+
+        &-item {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 2.29167rem 0;
+            @include atMedium {
+                padding: 1.5rem 0;
+            }
+
+            &-icon {
+                height: 3.125rem;
+                width: auto;
+                filter: drop-shadow(0 5px 3px rgba($color-black-full, .2));
+                @include atMedium {
+                    height: 2.5rem;
+                }
+            }
+        }
+    }
+}

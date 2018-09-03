@@ -1,0 +1,61 @@
+.heading-primary {
+    font-family: $font-main;
+    font-weight: 700;
+    color: $color-white;
+    font-size: 2.9167rem;
+    letter-spacing: -1px;
+}
+
+.heading-secondary {
+    font-family: $font-main;
+    color: $color-dark;
+    font-weight: 700;
+    font-size: 2.083rem;
+    letter-spacing: -1px;
+    @include atMedium {
+        font-size: 1.75rem;
+    }
+
+    &--big {
+        font-size: 2.5rem;
+    }
+}
+
+.heading-tertiary {
+    font-family: $font-main;
+    color: $color-primary;
+    font-size: 1.75rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    @include atMedium {
+        font-size: 1.375rem;
+    }
+    @include atLarge {
+        font-size: 1.125rem;
+    }
+
+    &--big {
+        font-size: 1.875rem;
+        @include atMedium {
+            font-size: 1.375rem;
+        }
+    }
+}
+
+.heading-quaternary {
+    font-family: $font-main;
+    color: $color-dark;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.paragraph {
+    font-family: $font-main;
+    color: $color-dark-alt;
+    font-weight: 400;
+    font-size: 1.4583rem;
+    @include atMedium {
+        font-size: 1.1875rem;
+    }
+}

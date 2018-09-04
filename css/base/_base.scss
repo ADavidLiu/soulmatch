@@ -35,9 +35,19 @@ body {
         .nav-mobile {
             opacity: 1;
             pointer-events: all;
+            position: absolute;
             @include atLarge {
                 opacity: 0;
                 pointer-events: none;
+            }
+
+            &__menu {
+                & + .nav-mobile__menu {
+                    margin-top: 32.5rem;
+                    @include atMedium {
+                        margin-top: 7.875rem;
+                    }
+                }
             }
         }
     }

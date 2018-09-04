@@ -21,6 +21,7 @@
         flex-direction: column;
         align-items: stretch;
         justify-content: flex-start;
+        position: relative;
         @include atLarge {
             box-shadow: 0px 10px 20px 0px rgba($color-black, .06);
             width: 100%;
@@ -59,6 +60,10 @@
                 padding-bottom: 1.5625rem;
             }
 
+            &:hover {
+                color: $color-primary-drk;
+            }
+
             &--active {
                 font-weight: 700;
                 @include linkStates($color-primary, none);
@@ -75,7 +80,7 @@
         flex-direction: column;
         position: relative;
         overflow: hidden;
-        /* height: 530px; */
+        height: 530px;
         @include atMedium {
             height: 40.625rem;
         }
@@ -84,42 +89,88 @@
             max-width: 430px;
             margin: 0 auto;
             height: 38.4375rem;
+            border-top-left-radius: .5rem;
+            border-top-right-radius: .5rem;
+            overflow: hidden;
+        }
+
+        .slick {
+            &-list,
+            &-track {
+                height: 100%;
+                flex: 1;
+            }
         }
 
         &-item {
             height: 100%;
             width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        &-controls {
+            display: none;
             @include atLarge {
-                border-top-left-radius: .5rem;
-                border-top-right-radius: .5rem;
-                overflow: hidden;
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 100%;
+                transform: translateY(-50%);
             }
         }
 
         &-arrow {
             position: absolute;
+            z-index: 1;
             top: 50%;
-            transform: translateY(-50%);
+            cursor: pointer;
+            background-color: $color-white;
+            border-radius: 5px;
+            box-shadow: 0px 0px 20px 0px rgba($color-black-full, .05);
+            height: 6.25rem;
+            width: 2.8125rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backface-visibility: hidden;
+            transition: all .25s;
 
             &-icon {
-                
+                transition: all .25s;
+                width: 30%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                backface-visibility: hidden;
             }
 
             &--prev {
-                left: 0;
+                left: -1.875rem;
+                transform: translate(-100%, -50%);
                 
                 .matching__slider-arrow {
                     &-icon {
-                        transform: scaleX(-1);
+                        transform: translate(-50%, -50%) scaleX(-1);
                     }
                 }
             }
 
             &--next {
-                right: 0;
+                right: -1.875rem;
+                transform: translate(100%, -50%);
+            }
+
+            &:hover {
+                background-color: $color-primary;
+
+                .matching__slider-arrow-icon {
+                    filter: brightness(200%);
+                }
             }
         }
     }
@@ -140,6 +191,7 @@
             left: 0;
             width: 100%;
             height: 100%;
+            overflow: hidden;
 
             &-inner {
                 position: absolute;
@@ -189,6 +241,7 @@
                         height: 100%;
                         pointer-events: none;
                         background-image: linear-gradient(to bottom, rgba($color-black-full, .65) 5%, transparent);
+                        transition: all .25s;
                     }
                     @include atLarge {
                         display: none;
@@ -206,10 +259,11 @@
                 position: absolute;
                 z-index: 1;
                 text-align: right;
-                bottom: 7.25rem;
+                bottom: 3.5rem;
                 transform: translateY(-100%);
                 left: 0;
                 width: 100%;
+                padding-bottom: 2rem;
                 @include atMedium {
                     bottom: 2rem;
                     padding-bottom: 1.5rem;
@@ -219,13 +273,15 @@
                 }
 
                 &:before {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: -50vw;
+                    width: 150vw;
+                    height: 20vh;
+                    background-image: linear-gradient(to top, rgba($color-black-full, 1) 5%, transparent);
+                    transition: all .25s;
                     @include atMedium {
-                        content: "";
-                        position: absolute;
-                        bottom: 0;
-                        left: -50vw;
-                        width: 150vw;
-                        height: 20vh;
                         background-image: linear-gradient(to top, rgba($color-black-full, .65) 5%, transparent);
                     }
                     @include atLarge {
@@ -237,6 +293,8 @@
 
         &-count {
             display: inline-flex;
+            position: relative;
+            z-index: 1;
             align-items: center;
             justify-content: center;
             height: 5rem;
@@ -272,12 +330,12 @@
                 width: auto;
                 display: block;
                 margin: 0 auto;
-                display: none;
+                display: none !important;
                 @include atMedium {
-                    display: block;
+                    display: block !important;
                 }
                 @include atLarge {
-                    display: none;
+                    display: none !important;
                 }
             }
 
@@ -322,21 +380,6 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-            }
-
-            &:before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 150%;
-                background-image: linear-gradient(to top, $color-black-full 5%, transparent);
-                transform: translateY(-100%);
-                pointer-events: none;
-                @include atMedium {
-                    display: none;
-                }
             }
         }
 

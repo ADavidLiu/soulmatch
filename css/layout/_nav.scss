@@ -1,6 +1,6 @@
 .nav-mobile {
     width: 65vw;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     padding: 7.083rem 0;
@@ -42,6 +42,8 @@
     }
 
     &__menu {
+        transition: all .25s;
+
         &-item {
             &-label {
                 display: flex;

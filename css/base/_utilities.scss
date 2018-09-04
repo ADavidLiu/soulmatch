@@ -1,5 +1,9 @@
 // Color
 .u-color {
+    &-primary {
+        color: $color-primary;
+    }
+
     &-white {
         color: $color-white;
     }
@@ -70,5 +74,39 @@
         &-smallest {
             margin-bottom: 5px;
         }
+    }
+
+    &-lg {
+        @include atLarge {
+            &-bottom {
+                &-null {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+
+// Letter spacing
+.u-letter {
+    &-null {
+        letter-spacing: 0;
+    }
+}
+
+
+// Opacity
+.u-opacity {
+    &-7 {
+        opacity: .7;
+    }
+}
+
+
+// Position
+.u-position {
+    &-relative {
+        position: relative;
     }
 }

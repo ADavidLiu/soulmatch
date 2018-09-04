@@ -1,0 +1,2 @@
+"use strict";function _classCallCheck(n,t){if(!(n instanceof t))throw new TypeError("Cannot call a class as a function")}var Menu=function n(){var t=this;_classCallCheck(this,n),this.toggleMobileNav=function(){t._$body.toggleClass("menu-open")},this._$btn=$(".header__btn"),this._$body=$("body"),this._$btn.click(this.toggleMobileNav)};$(document).ready(function(){if(0<$(".nav-mobile").length)new Menu});
+//# sourceMappingURL=app-dist.js.map

@@ -15,6 +15,9 @@
     @include atMedium {
         font-size: 1.75rem;
     }
+    @include atLarge {
+        font-size: 1.125rem;
+    }
 
     &--big {
         font-size: 2.5rem;
@@ -48,6 +51,10 @@
     font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: -1px;
+
+    &--big {
+        font-size: 1.667rem;
+    }
 }
 
 .paragraph {
@@ -59,6 +66,16 @@
         font-size: 1.1875rem;
     }
     @include atLarge {
-        font-size: 1rem;
+        font-size: .75rem;
+    }
+
+    &--small {
+        @include atLarge {
+            font-size: .875rem;
+        }
+    }
+
+    &--small-alt {
+        font-size: 1.25rem;
     }
 }

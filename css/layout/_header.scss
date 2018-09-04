@@ -22,7 +22,13 @@
     }
 
     &__nav {
-        display: none;
+        @include atLarge {
+            margin: 0 0 0 auto;
+            padding-right: 1.5rem;
+        }
+        @include atExtralarge {
+            padding-right: 3.125rem;
+        }
     }
 
     &__btn {
@@ -72,6 +78,19 @@
         background-color: $color-accent;
         border-radius: .5rem;
         padding: .75rem 1.4583rem;
+        @include atMedium {
+            padding: .5rem 1.333rem;
+        }
+        @include atLarge {
+            padding: .5rem 1rem;
+            border-radius: .25rem;
+        }
+
+        p {
+            @include atLarge {
+                font-size: 1.0625rem;
+            }
+        }
     }
 
     &__messages {
@@ -86,6 +105,9 @@
             width: 2.5rem;
             @include atMedium {
                 width: 2.375rem;
+            }
+            @include atLarge {
+                width: 2.5rem;
             }
         }
 

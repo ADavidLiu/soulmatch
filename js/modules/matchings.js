@@ -1,5 +1,7 @@
 class Matchings {
     constructor() {
+        this._$window = $(window);
+
         this._$slider = $(".matching__slider");
         this._$slider.slick({
             mobileFirst: true,
@@ -20,5 +22,27 @@ class Matchings {
                 }
             ]
         });
+
+        this._$interestsContainer = $(".matching__actions .container");
+        this._$interestsInner = $(".matching__actions-inner");
+        this._$interestsTrack = $(".matching__actions-inner-track");
+        this._$interestsGroup = $(".matching__actions-group").not(".matching__actions-group--incomplete");
+
+        this.resizeInterests();
+        this._$window.resize(this.handleResize);
+    }
+    
+    resizeInterests = () => {
+        this._$interestsGroup.css("width", this._$interestsContainer.width() + "px");
+
+        let trackWidth = 0;
+        this._$interestsGroup.each(function(i) {
+            const $this = $(this);
+            trackWidth += $this.innerWidth();
+        });
+    }
+
+    handleResize = () => {
+        this.resizeInterests();
     }
 }

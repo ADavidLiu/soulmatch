@@ -406,11 +406,38 @@
         }
 
         &-inner {
-            display: flex;
+            &-track {
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+
+        &-group {
+            display: inline-flex;
             align-items: stretch;
             justify-content: space-between;
             @include atMedium {
-                justify-content: space-around;
+                justify-content: space-between;
+            }
+
+            & + & {
+                margin-left: 10vw;
+                @include atLarge {
+                    margin-left: 3.333rem;
+                }
+            }
+
+            &--incomplete {
+                justify-content: flex-start;
+
+                .matching__actions-item {
+                    & + .matching__actions-item {
+                        margin-left: 10vw;
+                        @include atLarge {
+                            margin-left: 3.333rem;
+                        }
+                    }
+                }
             }
         }
 

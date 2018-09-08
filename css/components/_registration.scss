@@ -1,4 +1,18 @@
 .registration {
+    position: relative;
+    padding: 0 30px;
+
+    &__close {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2.083rem;
+        cursor: pointer;
+        @include atMedium {
+            width: 1.5625rem;
+        }
+    }
+
     &__logo {
         width: 7.083rem;
         margin-bottom: 10rem;

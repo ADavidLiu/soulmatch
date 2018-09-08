@@ -740,14 +740,14 @@ li {
         .popup__content-header {
           margin-bottom: .9375rem; } }
       .popup__content-header-icon {
-        width: 3.333rem;
+        height: 3.333rem;
         -webkit-filter: drop-shadow(0 5px 3px rgba(0, 0, 0, 0.2));
         filter: drop-shadow(0 5px 3px rgba(0, 0, 0, 0.2));
         margin-right: 1rem; }
         @media screen and (min-width: 768px) {
           .popup__content-header-icon {
             margin-right: .75rem;
-            width: 2rem; } }
+            height: 2rem; } }
     .popup__content-main * {
       line-height: 1.75; }
   .popup--bio .popup__content {

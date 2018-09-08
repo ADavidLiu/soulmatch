@@ -38,12 +38,12 @@
             }
 
             &-icon {
-                width: 3.333rem;
+                height: 3.333rem;
                 filter: drop-shadow(0 5px 3px rgba($color-black-full, .2));
                 margin-right: 1rem;
                 @include atMedium {
                     margin-right: .75rem;
-                    width: 2rem;
+                    height: 2rem;
                 }
             }
         }

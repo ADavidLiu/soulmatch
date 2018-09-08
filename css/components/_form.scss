@@ -1,0 +1,76 @@
+.form {
+    label {
+        font-weight: 300;
+        color: $color-gray-alt-2;
+        letter-spacing: 0;
+        @extend .paragraph;
+        @extend .paragraph--small-alt;
+        @include atMedium {
+            font-size: .75rem;
+            margin-bottom: 0;
+        }
+    }
+
+    textarea,
+    select,
+    input {
+        appearance: none;
+        resize: none;
+        background: transparent;
+        border-radius: 0;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $color-gray-alt;
+        transition: all .25s;
+        display: block;
+        width: 100%;
+        color: $color-dark;
+        font-weight: 400;
+        letter-spacing: 0;
+        @extend .paragraph;
+        @extend .paragraph--med;
+        @include atMedium {
+            padding-block-end: .75rem;
+        }
+
+        &:focus {
+            border-color: $color-primary;
+        }
+
+        &::placeholder {
+            color: $color-gray-alt-2;
+        }
+
+        & + input {
+            margin-top: 2.083rem;
+            @include atMedium {
+                margin-top: 1.5625rem;
+            }
+            @include atLarge {
+                margin-top: 1.125rem;
+            }
+        }
+    }
+
+    &__group {
+        position: relative;
+
+        & + & {
+            margin-top: 4rem;
+            @include atMedium {
+                margin-top: 3rem;
+            }
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        cursor: pointer;
+        height: 1.25rem;
+        @include atMedium {
+            height: .9375rem;
+        }
+    }
+}

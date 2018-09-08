@@ -55,6 +55,39 @@ body {
 
 main {
     flex: 1;
+    background-color: $color-white;
+    position: relative;
+    padding: 2.9167rem 0;
+    @include atMedium {
+        padding: 2.1875rem 0;
+    }
+    @include atLarge {
+        padding: 3.125rem 0 5rem 0;
+    }
+
+    & > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 11.833rem;
+        background-image: linear-gradient(to bottom, $color-gray-alt-10, transparent);
+        @include atMedium {
+            height: 8.875rem;
+        }
+    }
+
+    &.no-shadow {
+        &:before {
+            display: none;
+        }
+    }
 }
 
 h1,

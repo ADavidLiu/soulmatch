@@ -8,6 +8,14 @@
         color: $color-white;
     }
 
+    &-dark {
+        color: $color-dark;
+
+        &-alt {
+            color: $color-dark-alt;
+        }
+    }
+
     &-gradient {
         background: linear-gradient(to bottom, $color-primary-drk, $color-primary);
         -webkit-background-clip: text;
@@ -74,6 +82,36 @@
         &-smallest {
             margin-bottom: 5px;
         }
+
+        &-med {
+            margin-bottom: 2.083rem;
+            @include atMedium {
+                margin-bottom: 1.5625rem;
+            }
+            @include atLarge {
+                margin-bottom: .5625rem;
+            }
+
+            &-2 {
+                margin-bottom: 3.333rem;
+                @include atMedium {
+                    margin-bottom: 2.5rem;
+                }
+                @include atLarge {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+
+        &-big {
+            margin-bottom: 5rem;
+            @include atMedium {
+                margin-bottom: 3.75rem;
+            }
+            @include atLarge {
+                margin-bottom: 2.75rem;
+            }
+        }
     }
 
     &-lg {
@@ -108,5 +146,27 @@
 .u-position {
     &-relative {
         position: relative;
+    }
+}
+
+
+// Alignment
+.u-align {
+    &-inline {
+        &-center {
+            text-align: center;
+        }
+    }
+}
+
+
+// Line height
+.u-lh {
+    &-1-25 {
+        line-height: 1.25;
+    }
+
+    &-1-5 {
+        line-height: 1.5;
     }
 }

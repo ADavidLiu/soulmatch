@@ -19,6 +19,10 @@
         @include atLarge {
             display: inline-block;
         }
+
+        &-img {
+            height: 3.125rem;
+        }
     }
 
     &__nav {

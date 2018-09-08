@@ -1,0 +1,17 @@
+.featured-message {
+    background-image: linear-gradient(to bottom right, $color-primary, $color-primary-drk);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__icon {
+        width: 8.333rem;
+        @include atMedium {
+            width: 6.25rem;
+        }
+        @include atLarge {
+            width: 4.5rem;
+        }
+    }
+}

@@ -1,6 +1,8 @@
 .footer {
     display: none;
     @include atLarge {
+        position: relative;
+        z-index: 1;
         display: block;
         background-color: $color-white;
         padding: 2.5rem 0;

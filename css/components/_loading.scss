@@ -1,0 +1,10 @@
+.loading {
+    text-align: center;
+
+    &__logo {
+        max-width: 23.333rem;
+        @include atMedium {
+            max-width: 17.5rem;
+        }
+    }
+}

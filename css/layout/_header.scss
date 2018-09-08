@@ -135,4 +135,54 @@
             }
         }
     }
+
+    &--white {
+        .header {
+            &__logo {
+                &-img {
+                    filter: brightness(0) invert(1);
+                }
+            }
+
+            &__btn {
+                &-line {
+                    background-color: $color-white;
+                }
+            }
+
+            &__messages {
+                &-icon {
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+
+        .nav {
+            &__menu {
+                &-item {
+                    color: $color-white;
+                }
+
+                &-link {
+                    &:hover {
+                        color: $color-primary-drk-2;
+                    }
+                }
+            }
+        }
+    }
+
+    &--overlay {
+        position: absolute;
+        z-index: 2;
+        background: transparent;
+        padding-top: 5.4167rem;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        @include atMedium {
+            padding-top: 4.0625rem;
+        }
+    }
 }

@@ -1,0 +1,83 @@
+.invite {
+    padding-top: 0;
+
+    &__banner {
+        background-image: linear-gradient(to bottom right, $color-primary, $color-primary-drk);
+        padding: 22.667rem 0 3.75rem 0;
+        text-align: center;
+        @include atMedium {
+            padding: 17rem 0 2.8125rem 0;
+        }
+
+        &-img {
+            width: 98%;
+            margin-bottom: -2rem;
+            max-width: 576px;
+            pointer-events: none;
+            @include atMedium {
+                margin-bottom: -1.5rem;
+            }
+            @include atLarge {
+                margin-bottom: -1.25rem;
+            }
+        }
+    }
+
+    &__cta {
+        background-color: $color-gray-alt-3;
+        padding: 6.25rem 0;
+        text-align: center;
+        @include atMedium {
+            padding: 4.6875rem 0;
+        }
+        @include atLarge {
+            padding: 3rem 0;
+        }
+    }
+
+    &__link {
+        &-wrapper {
+            padding: 4.167rem 0;
+            @include atMedium {
+                padding: 3.125rem 0;
+            }
+        }
+
+        &-box {
+            border-radius: 5px;
+            border: 2px dashed $color-gray-alt;
+            height: 7rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include atMedium {
+                height: 4.75rem;
+            }
+
+            &-url {
+                white-space: nowrap;
+                overflow: hidden;
+                width: 90%;
+                text-overflow: ellipsis;
+                text-align: left;
+                padding: 0 4.167rem 0 1.25rem;
+                color: $color-black;
+                font-size: 1.667rem;
+                font-weight: 400;
+                @include atMedium {
+                    padding: 0 3.125rem 0 .9375rem;
+                    font-size: 1.25rem;
+                }
+            }
+
+            &-btn {
+                margin-right: 1.25rem;
+                height: calc(100% - 2.5rem);
+                @include atMedium {
+                    margin-right: .9375rem;
+                    height: calc(100% - 1.875rem);
+                }
+            }
+        }
+    }
+}

@@ -49,6 +49,10 @@
                 margin-top: 1.125rem;
             }
         }
+
+        &.error {
+            border-color: $color-accent-2;
+        }
     }
 
     &__group {
@@ -72,5 +76,13 @@
         @include atMedium {
             height: .9375rem;
         }
+    }
+
+    &__feedback {
+        display: inline-block;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        transform: translateY(100%);
     }
 }

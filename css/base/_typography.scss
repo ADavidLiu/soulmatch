@@ -91,6 +91,13 @@
         }
     }
 
+    &--small-2 {
+        font-size: 1.25rem;
+        @include atMedium {
+            font-size: .9375rem;
+        }
+    }
+
     &--small-alt {
         font-size: 1.25rem;
     }

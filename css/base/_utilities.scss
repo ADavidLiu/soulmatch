@@ -8,6 +8,14 @@
         color: $color-white;
     }
 
+    &-accent {
+        color: $color-accent;
+
+        &-2 {
+            color: $color-accent-2;
+        }
+    }
+
     &-dark {
         color: $color-dark;
 
@@ -88,17 +96,11 @@
             @include atMedium {
                 margin-bottom: 1.5625rem;
             }
-            @include atLarge {
-                margin-bottom: .5625rem;
-            }
 
             &-2 {
                 margin-bottom: 3.333rem;
                 @include atMedium {
                     margin-bottom: 2.5rem;
-                }
-                @include atLarge {
-                    margin-bottom: 2rem;
                 }
             }
         }
@@ -107,9 +109,6 @@
             margin-bottom: 5rem;
             @include atMedium {
                 margin-bottom: 3.75rem;
-            }
-            @include atLarge {
-                margin-bottom: 2.75rem;
             }
         }
     }

@@ -87,12 +87,6 @@
             align-items: center;
             justify-content: space-between;
         }
-
-        & + & {
-            @include atMedium {
-                margin-top: 7.875rem;
-            }
-        }
     }
 }
 

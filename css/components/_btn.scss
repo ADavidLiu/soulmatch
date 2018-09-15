@@ -37,13 +37,30 @@
         }
     }
 
-    &--inner {
+    &--inner,
+    &--inner-alt {
         padding: 0 2rem 5px 2rem;
         width: auto;
         font-size: 1.333rem;
         @include atMedium {
             padding: 0 1.5rem 5px 1.5rem;
             font-size: 1rem;
+        }
+    }
+
+    &--inner-alt {
+        padding: 1rem 0;
+        width: 8rem;
+        border: 2px solid $color-primary;
+        text-align: center;
+        @include atMedium {
+            width: 6rem;
+            padding: .75rem 0;
+        }
+        @include atLarge {
+            padding: 0;
+            width: 5rem;
+            font-size: .875rem;
         }
     }
 }

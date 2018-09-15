@@ -1,0 +1,39 @@
+.messages {
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+
+        &-img {
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            border-radius: 50%;
+            height: 6.167rem;
+            width: 6.167rem;
+            margin-right: 2.083rem;
+            pointer-events: none;
+            @include atMedium {
+                height: 4rem;
+                width: 4rem;
+                margin-right: 1.5625rem;
+            }
+        }
+
+        &-copy {
+            flex: 1;
+        }
+
+        & + & {
+            margin-top: 2.5rem;
+            @include atMedium {
+                margin-top: 1.875rem;
+            }
+        }
+
+        &--alt {
+            cursor: initial;
+        }
+    }
+}

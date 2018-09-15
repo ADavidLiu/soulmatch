@@ -1,0 +1,120 @@
+.notifications {
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+
+        &-img {
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            border-radius: 50%;
+            height: 4.167rem;
+            width: 4.167rem;
+            margin-right: 1.667rem;
+            pointer-events: none;
+            overflow: hidden;
+            @include atMedium {
+                height: 3.125rem;
+                width: 3.125rem;
+                margin-right: 1.25rem;
+            }
+
+            &--icon,
+            &--icon-alt {
+                background-size: auto 40%;
+                position: relative;
+                box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    left: 0;
+                    width: 110%;
+                    height: 110%;
+                    border-radius: 50%;
+                }
+            }
+
+            &--icon-alt {
+                background-size: auto 70%;
+            }
+
+            &--red {
+                &:before {
+                    background-image: linear-gradient( to top, rgb(234,40,40) 0%, rgb(227,25,25) 100%);
+                }
+            }
+            
+            &--green {
+                &:before {
+                    background-image: linear-gradient( to top, rgb(79,231,100) 0%, rgb(56,205,77) 100%);
+                }
+            }
+            
+            &--yellow {
+                &:before {
+                    background-image: linear-gradient( to top, rgb(238,240,65) 0%, rgb(255,220,55) 100%);
+                }
+            }
+        }
+
+        &-copy {
+            flex: 1;
+
+            p {
+                opacity: .7;
+                font-weight: 700;
+            }
+        }
+
+        & + & {
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            position: relative;
+            @include atMedium {
+                margin-top: 1.875rem;
+                padding-top: 1.875rem;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -50vw;
+                width: 150vw;
+                height: 1px;
+                background-color: $color-gray-alt-12;
+                @include atMedium {
+                    left: 0;
+                    width: 100%;
+                }
+            }
+        }
+
+        &:last-child {
+            position: relative;
+            padding-bottom: 2.5rem;
+            @include atMedium {
+                padding-bottom: 1.875rem;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: -50vw;
+                width: 150vw;
+                height: 1px;
+                background-color: $color-gray-alt-12;
+                @include atMedium {
+                    left: 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

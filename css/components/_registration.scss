@@ -28,6 +28,81 @@
         @include atMedium {
             margin: 7.5rem 0;
         }
+
+        &--alt {
+            margin: 2.5rem 0;
+            @include atMedium {
+                max-resolution: 1.875rem 0;
+            }
+        }
+    }
+
+    &__interest-description {
+        border: 1px solid $color-gray-alt;
+        border-radius: 5px;
+
+        &-header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 1.667rem;
+            border-bottom: 1px solid $color-gray-alt;
+            @include atMedium {
+                padding: 1.25rem;
+            }
+        }
+
+        &-main {
+            position: relative;
+
+            textarea {
+                padding: 1.667rem;
+                border: 0;
+                height: 14.583rem;
+                position: relative;
+                z-index: 1;
+                color: $color-dark;
+                @include atMedium {
+                    padding: 1.25rem;
+                    height: 10.9375rem;
+                }
+
+                &::placeholder {
+                    color: $color-gray-alt-2;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 40%;
+                background-image: linear-gradient(to bottom, $color-gray-alt-13, transparent);
+                pointer-events: none;
+            }
+        }
+
+        &-icon {
+            margin-right: 1.25rem;
+            width: 2.5rem;
+            @include atMedium {
+                margin-right: .9375rem;
+                width: 1.875rem;
+            }
+        }
+
+        & + & {
+            margin-top: 2.5rem;
+            @include atMedium {
+                margin-top: 1.875rem;
+            }
+        }
     }
 
     &--center {

@@ -1,0 +1,38 @@
+.search {
+    background-color: $color-gray-alt-4;
+    padding: 2.083rem 0;
+    margin-bottom: 2.5rem;
+    @include atMedium {
+        padding: 1.5625rem 0;
+        margin-bottom: 1.875rem;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    &__icon {
+        width: 2.083rem;
+        margin-right: 1rem;
+        @include atMedium {
+            width: 1.5625rem;
+            margin-right: .75rem;
+        }
+    }
+
+    &__input {
+        background-color: transparent;
+        font-weight: 400;
+        color: $color-dark;
+        display: block;
+        flex: 1;
+        @extend .heading-quaternary;
+        @extend .heading-quaternary--med;
+
+        &::placeholder {
+            color: $color-gray-alt-2;
+        }
+    }
+}

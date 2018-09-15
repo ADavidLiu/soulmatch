@@ -16,6 +16,14 @@
         }
     }
 
+    &-gray {
+        &-alt {
+            &-11 {
+                color: $color-gray-alt-11;
+            }
+        }
+    }
+
     &-dark {
         color: $color-dark;
 
@@ -120,6 +128,16 @@
                     margin-bottom: 0;
                 }
             }
+        }
+    }
+}
+
+
+// Padding
+.u-padding {
+    &-top {
+        &-null {
+            padding-top: 0;
         }
     }
 }

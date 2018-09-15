@@ -15,5 +15,20 @@ $(document).ready(function () {
     if ($(".popup").length > 0) {
         const popupManager = new PopupManager();
     }
+
+    if ($(".messages__btn").length > 0) {
+        $(".messages__btn").click(e => {
+            const $this = $(e.currentTarget);
+            const $label = $this.children();
+            const text = $label.text();
+            $this.toggleClass("btn--border");
+            $label.toggleClass("u-color-gradient");
+            if (text === "INVITE") {
+                $label.text("INVITED");
+            } else {
+                $label.text("INVITE");
+            }
+        });
+    }
     
 });

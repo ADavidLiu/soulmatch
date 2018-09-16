@@ -95,6 +95,16 @@
     &--big {
         font-size: 1.667rem;
     }
+
+    &--big-alt {
+        font-size: 1.35rem;
+        @include atMedium {
+            font-size: 1.125rem;
+        }
+        @include atLarge {
+            font-size: 1rem;
+        }
+    }
 }
 
 .paragraph {
@@ -107,6 +117,13 @@
     }
     @include atLarge {
         font-size: .75rem;
+    }
+
+    &--smaller {
+        font-size: 1.167rem;
+        @include atMedium {
+            font-size: .875rem;
+        }
     }
 
     &--small {

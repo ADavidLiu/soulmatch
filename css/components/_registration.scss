@@ -37,6 +37,82 @@
         }
     }
 
+    &__interests {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: -1rem;
+        @include atMedium {
+            margin: -.75rem;
+        }
+    }
+
+    &__interest {
+        margin: 1rem;
+        border-radius: 5px;
+        box-shadow: 10px 17.321px 60px 0px rgba(0, 0, 0, 0.08);
+        padding: 3.333rem;
+        width: calc(50% - 2rem);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        @include atMedium {
+            width: calc(50% - 1.5rem);
+            margin: .75rem;
+            padding: 2.5rem;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: all .25s;
+            background-image: linear-gradient(to bottom, $color-primary, $color-primary-drk);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        &-icon,
+        &-label {
+            position: relative;
+            z-index: 1;
+        }
+
+        &-label {
+            color: $color-dark;
+        }
+
+        &-icon {
+            height: 5.4167rem;
+            margin-bottom: 1.25rem;
+            @include atMedium {
+                height: 4.0625rem;
+                margin-bottom: .9375rem;
+            }
+        }
+
+        &--active {
+            .registration__interest {
+                &-icon {
+                    filter: brightness(0) invert(1);
+                }
+
+                &-label {
+                    color: $color-white;
+                }
+            }
+
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+
     &__interest-description {
         border: 1px solid $color-gray-alt;
         border-radius: 5px;
@@ -101,6 +177,102 @@
             margin-top: 2.5rem;
             @include atMedium {
                 margin-top: 1.875rem;
+            }
+        }
+    }
+
+    &__photos-wrapper {
+        margin-top: 2rem;
+        @include atMedium {
+            margin-top: 1.5rem;
+        }
+    }
+
+    &__photos-browse {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        @include atMedium {
+            margin-top: .75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        &-divider {
+            margin: 0 1rem;
+            @include atMedium {
+                margin: 0 .75rem;
+            }
+        }
+
+        &-btn {
+            border: 2px dashed $color-gray-alt;
+            padding: 1.25rem 0;
+            width: 20rem;
+            border-radius: 5px;
+            white-space: nowrap;
+            cursor: pointer;
+            @include atMedium {
+                padding: 1rem 0;
+                width: 15rem;
+            }
+            @include atLarge {
+                width: 11rem;
+            }
+        }
+    }
+
+    &__photos {
+        .slick {
+            &-track {
+                margin: 0 -1.5rem;
+                @include atMedium {
+                    margin: 0;
+                }
+            }
+        }
+
+        &-item {
+            height: 45vw;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center top;
+            position: relative;
+            margin: 0 1.5rem;
+            cursor: pointer;
+            @include atMedium {
+                height: 20rem;
+                margin: 0 .75rem;
+            }
+
+            &-delete {
+                cursor: pointer;
+                position: absolute;
+                z-index: 1;
+                top: 1.667rem;
+                right: 1.667rem;
+                width: 1.5rem;
+                @include atMedium {
+                    top: 1.25rem;
+                    right: 1.25rem;
+                    width: 1.125rem;
+                }
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 50%;
+                background-image: linear-gradient(rgba($color-black-full, .125), transparent);
+                pointer-events: none;
+            }
+
+            &:focus {
+                outline: none;
             }
         }
     }

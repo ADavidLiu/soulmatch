@@ -19,6 +19,7 @@
         background: transparent;
         border-radius: 0;
         padding-bottom: 1rem;
+        border: 0;
         border-bottom: 1px solid $color-gray-alt;
         transition: all .25s;
         display: block;
@@ -34,6 +35,7 @@
 
         &:focus {
             border-color: $color-primary;
+            outline: none;
         }
 
         &::placeholder {
@@ -55,8 +57,26 @@
         }
     }
 
+    textarea {
+        height: 15rem;
+        @include atMedium {
+            height: 11.25rem;
+        }
+    }
+
     &__group {
         position: relative;
+
+        &-footer {
+            padding-top: 8px;
+            text-align: right;
+        }
+
+        small {
+            color: $color-gray-alt-2;
+            @extend .paragraph;
+            @extend .paragraph--smaller;
+        }
 
         & + & {
             margin-top: 4rem;
@@ -84,5 +104,82 @@
         bottom: -5px;
         left: 0;
         transform: translateY(100%);
+    }
+}
+
+/* Range input */
+.noUi {
+    &-target,
+    &-base {
+        height: 1.25rem !important;
+        @include atMedium {
+            height: .9375rem !important;
+        }
+    }
+
+    &-target {
+        border: 0;
+        box-shadow: none;
+    }
+
+    &-connects {
+        background-image: linear-gradient(to bottom, $color-primary, $color-primary-drk) !important;
+        height: 1.25rem !important;
+        border-radius: 3px !important;
+        @include atMedium {
+            border-radius: 5px !important;
+            height: .9375rem !important;
+        }
+    }
+    
+    &-connect {
+        background-color: $color-gray-alt-14 !important;
+        background-image: none !important;
+    }
+    
+    .scale {
+        display: none;
+    }
+    
+    &-handle {
+        box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.2);
+        background-image: url("../images/i-pointer-bars.svg") !important;
+        background-repeat: no-repeat !important;
+        background-size: 40% auto;
+        background-position: 55% 55%;
+        background-color: $color-white !important;
+        height: 2.5rem !important;
+        width: 2.5rem !important;
+        border-radius: 50% !important;
+        border: 0 !important;
+        top: -8px !important;
+        cursor: pointer;
+        @include atMedium {
+            height: 1.875rem !important;
+            width: 1.875rem !important;
+        }
+
+        &:before,
+        &:after {
+            display: none;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &-tooltip {
+        bottom: -10px !important;
+        transform: translate(-50%, 100%) !important;
+        border: 0;
+        padding: 0;
+        background: transparent;
+        font-weight: 700;
+        font-size: 1.25rem;
+        font-family: $font-main;
+        @include atMedium {
+            font-size: .9375rem;
+        }
     }
 }

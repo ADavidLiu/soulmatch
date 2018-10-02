@@ -429,11 +429,22 @@ li, .matching__profile-btn, .form label, .form textarea,
       -webkit-box-flex: 1;
       -ms-flex: 1;
       flex: 1; }
-    .matching__slider-item {
+    .matching__slider-list, .matching__slider-item {
       height: 100%;
-      width: 100%; }
-      .matching__slider-item:focus {
+      width: 100%;
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1; }
+      .matching__slider-list:focus, .matching__slider-item:focus {
         outline: none; }
+    .matching__slider-list {
+      position: relative;
+      background-color: #ffffff; }
+    .matching__slider-item {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0; }
     .matching__slider-controls {
       display: none; }
       @media screen and (min-width: 992px) {

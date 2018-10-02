@@ -109,13 +109,27 @@
             }
         }
 
+        &-list,
         &-item {
             height: 100%;
             width: 100%;
+            flex: 1;
 
             &:focus {
                 outline: none;
             }
+        }
+
+        &-list {
+            position: relative;
+            background-color: $color-white;
+        }
+
+        &-item {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
         }
 
         &-controls {

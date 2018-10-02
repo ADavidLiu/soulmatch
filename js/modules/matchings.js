@@ -3,7 +3,7 @@ class Matchings {
         this._$window = $(window);
 
         this._$slider = $(".matching__slider");
-        this._$slider.slick({
+        /* this._$slider.slick({
             mobileFirst: true,
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -21,7 +21,9 @@ class Matchings {
                     }
                 }
             ]
-        });
+        }); */
+
+        this._$slider.jTinder();
 
         this._$interestsContainer = $(".matching__actions .container");
         this._$interestsInner = $(".matching__actions-inner");

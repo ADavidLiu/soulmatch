@@ -410,13 +410,24 @@
         }
 
         &-message {
-            width: 3.333rem;
             cursor: pointer;
+            background-color: $color-accent;
+            border-radius: .5rem;
+            padding: .75rem 1.4583rem;
+            color: $color-white;
+            font-weight: 500;
+            letter-spacing: 0;
+            transition: all .25s;
             @include atMedium {
-                width: 2.5rem;
+                padding: .5rem 1.333rem;
             }
             @include atLarge {
-                width: 1.875rem;
+                padding: .5rem 1rem;
+                border-radius: .25rem;
+            }
+
+            &:hover {
+                background-color: darken($color-accent, 15%);
             }
         }
 

@@ -737,14 +737,25 @@ li, .matching__profile-btn, .form label, .form textarea,
         -ms-flex-pack: justify;
         justify-content: space-between; }
     .matching__profile-message {
-      width: 3.333rem;
-      cursor: pointer; }
+      cursor: pointer;
+      background-color: #45e967;
+      border-radius: .5rem;
+      padding: .75rem 1.4583rem;
+      color: #ffffff;
+      font-weight: 500;
+      letter-spacing: 0;
+      -webkit-transition: all .25s;
+      -o-transition: all .25s;
+      transition: all .25s; }
       @media screen and (min-width: 768px) {
         .matching__profile-message {
-          width: 2.5rem; } }
+          padding: .5rem 1.333rem; } }
       @media screen and (min-width: 992px) {
         .matching__profile-message {
-          width: 1.875rem; } }
+          padding: .5rem 1rem;
+          border-radius: .25rem; } }
+      .matching__profile-message:hover {
+        background-color: #18ca3d; }
     .matching__profile-btn {
       color: #ffffff;
       font-weight: 700;

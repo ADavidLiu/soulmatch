@@ -24,6 +24,15 @@ class Matchings {
         }); */
 
         this._$slider.jTinder();
+        this._$btnPrev = $(".matching__slider-arrow--prev");
+        this._$btnNext = $(".matching__slider-arrow--next");
+        
+        this._$btnPrev.click(() => {
+            this._$slider.jTinder("dislike");
+        });
+        this._$btnNext.click(() => {
+            this._$slider.jTinder("like");
+        });
 
         this._$interestsContainer = $(".matching__actions .container");
         this._$interestsInner = $(".matching__actions-inner");

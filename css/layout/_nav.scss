@@ -13,7 +13,7 @@
     align-items: stretch;
     justify-content: space-between;
     @include atMedium {
-        padding-bottom: 0;
+        /* padding-bottom: 0; */
     }
 
     &__profile {

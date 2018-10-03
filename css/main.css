@@ -34,6 +34,11 @@ body {
   -webkit-transition: all .25s;
   -o-transition: all .25s;
   transition: all .25s; }
+  body.main {
+    height: 100vh; }
+    @media screen and (min-width: 768px) {
+      body.main {
+        height: auto; } }
   body.menu-open {
     padding: 7.083rem 0; }
     @media screen and (min-width: 992px) {
@@ -2122,7 +2127,7 @@ li, .matching__profile-btn, .form label, .form textarea,
   justify-content: space-between; }
   @media screen and (min-width: 768px) {
     .nav-mobile {
-      padding-bottom: 0; } }
+      /* padding-bottom: 0; */ } }
   .nav-mobile__profile {
     text-align: center;
     margin-bottom: 4.167rem; }

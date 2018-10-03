@@ -19,6 +19,13 @@ body {
     justify-content: flex-start;
     transition: all .25s;
 
+    &.main {
+        height: 100vh;
+        @include atMedium {
+            height: auto;
+        }
+    }
+
     &.menu-open {
         padding: 7.083rem 0;
         @include atLarge {

@@ -2,8 +2,8 @@ class Matchings {
     constructor() {
         this._$window = $(window);
 
-        this._$slider = $(".matching__slider");
-        /* this._$slider.slick({
+        this._$slider = $(".matching__slider-list");
+        this._$slider.slick({
             mobileFirst: true,
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -21,9 +21,9 @@ class Matchings {
                     }
                 }
             ]
-        }); */
+        });
 
-        this._$slider.jTinder();
+        /* this._$slider.jTinder();
         this._$btnPrev = $(".matching__slider-arrow--prev");
         this._$btnNext = $(".matching__slider-arrow--next");
         
@@ -32,7 +32,7 @@ class Matchings {
         });
         this._$btnNext.click(() => {
             this._$slider.jTinder("like");
-        });
+        }); */
 
         this._$interestsContainer = $(".matching__actions .container");
         this._$interestsInner = $(".matching__actions-inner");

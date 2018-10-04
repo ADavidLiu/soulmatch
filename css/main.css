@@ -446,10 +446,10 @@ li, .matching__profile-btn, .form label, .form textarea,
       position: relative;
       background-color: #ffffff; }
     .matching__slider-item {
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      left: 0; }
+      /* position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0; */ }
     .matching__slider-controls {
       display: none; }
       @media screen and (min-width: 992px) {

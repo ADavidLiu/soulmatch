@@ -1,6 +1,7 @@
 //@prepros-prepend "modules/menu.js";
 //@prepros-prepend "modules/matchings.js";
 //@prepros-prepend "modules/popupManager.js";
+//@prepros-prepend "modules/gallery.js";
 
 $(document).ready(function () {
     
@@ -14,6 +15,10 @@ $(document).ready(function () {
 
     if ($(".popup").length > 0) {
         const popupManager = new PopupManager();
+    }
+
+    if ($(".popup-gallery").length > 0) {
+        const gallery = new Gallery();
     }
 
     if ($(".messages__btn").length > 0) {

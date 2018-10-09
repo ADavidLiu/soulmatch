@@ -9,7 +9,11 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    padding: 0;
+    padding: 25px;
+    padding-top: 0;
+    @include atMedium {
+        padding: 0;
+    }
     @include atLarge {
         padding: 3.125rem 0 5rem 0;
     }
@@ -29,6 +33,16 @@
         align-items: stretch;
         justify-content: flex-start;
         position: relative;
+        border-radius: 1rem;
+        overflow: hidden;
+        @include atSmall {
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        @include atMedium {
+            border-radius: 0;
+            max-width: 100%;
+        }
         @include atLarge {
             box-shadow: 0px 10px 20px 0px rgba($color-black, .06);
             width: 100%;
@@ -38,10 +52,13 @@
     }
 
     &__nav {
-        display: flex;
         align-items: center;
         justify-content: space-between;
         background-color: $color-gray;
+        display: none;
+        @include atMedium {
+            display: flex;
+        }
         @include atLarge {
             width: 100%;
             max-width: 430px;
@@ -245,11 +262,12 @@
                 top: 0;
                 left: 0;
                 width: 100%;
-                height: 30%;
+                height: 20%;
                 background-image: linear-gradient(to bottom, $color-black-full 5%, transparent);
                 text-align: right;
                 padding: 2.083rem 0;
                 @include atMedium {
+                    height: 30%;
                     background-image: none;
                 }
                 @include atLarge {
@@ -289,9 +307,11 @@
                 left: 0;
                 width: 100%;
                 padding-bottom: 2rem;
+                display: none;
                 @include atMedium {
                     bottom: 2rem;
                     padding-bottom: 1.5rem;
+                    display: block;
                 }
                 @include atLarge {
                     bottom: 0;
@@ -314,6 +334,12 @@
                     }
                 }
             }
+        }
+
+        &-gallery-trigger {
+            cursor: pointer;
+            width: 2.5rem;
+            display: block;
         }
 
         &-count {
@@ -385,8 +411,8 @@
         }
 
         &-info {
-            background-color: rgba($color-white, .9);
-            padding: 2.708rem 0;
+            background-image: linear-gradient(to top, $color-black-full, transparent);
+            padding: 8.333rem 0 2.708rem 0;
             position: absolute;
             z-index: 2;
             bottom: 0;
@@ -396,6 +422,7 @@
             @include atMedium {
                 padding: 1.25rem 0;
                 background-color: $color-white;
+                background-image: none;
             }
             @include atLarge {
                 background-color: rgba($color-white, .9);
@@ -406,6 +433,35 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+            }
+        }
+
+        &-copy {
+            h2,
+            p,
+            span {
+                color: $color-white;
+                @include atMedium {
+                    color: initial;
+                }
+            }
+
+            h2 {
+                @include atMedium {
+                    color: $color-dark;
+                }
+            }
+
+            p {
+                @include atMedium {
+                    color: $color-dark-alt;
+                }
+            }
+
+            span {
+                @include atMedium {
+                    color: $color-gray-alt-5;
+                }
             }
         }
 
@@ -445,7 +501,10 @@
     }
 
     &__actions {
-        background-image: linear-gradient(to top, $color-primary-drk, $color-primary);
+        background-color: $color-black;
+        @include atMedium {
+            background-image: linear-gradient(to top, $color-primary-drk, $color-primary);
+        }
         @include atLarge {
             width: 100%;
             max-width: 430px;
@@ -495,7 +554,7 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            padding: 2.29167rem 0;
+            padding: 1.667rem 0 2rem 0;
             @include atMedium {
                 padding: 1.5rem 0;
             }
@@ -504,14 +563,23 @@
             }
 
             &-icon {
-                height: 3.125rem;
+                height: 2.667rem;
                 width: auto;
+                display: none;
                 filter: drop-shadow(0 5px 3px rgba($color-black-full, .2));
                 @include atMedium {
+                    display: block;
                     height: 2.5rem;
                 }
                 @include atLarge {
                     height: 1.875rem;
+                }
+
+                &--mobile {
+                    display: block;
+                    @include atMedium {
+                        display: none;
+                    }
                 }
             }
         }

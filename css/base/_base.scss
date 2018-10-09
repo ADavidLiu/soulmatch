@@ -3,6 +3,9 @@ body {
     overflow-x: hidden;
     font-size: 9px;
     background-image: linear-gradient(to bottom, $color-primary, $color-primary-drk);
+    @include atExtrasmall {
+        font-size: 2.125vw;
+    }
     @include atMedium {
         font-size: 15px;
     }

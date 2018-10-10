@@ -692,7 +692,8 @@ li, .matching__profile-btn, .form label, .form textarea,
       width: 5rem;
       border: 1px solid #ffffff;
       border-radius: 3px;
-      background-color: rgba(0, 0, 0, 0.2); }
+      background-color: rgba(0, 0, 0, 0.2);
+      cursor: pointer; }
       @media screen and (min-width: 768px) {
         .matching__profile-count {
           border-width: 2px;
@@ -837,9 +838,13 @@ li, .matching__profile-btn, .form label, .form textarea,
         margin: 0 auto;
         border-bottom-left-radius: .5rem;
         border-bottom-right-radius: .5rem; } }
-    .matching__actions-inner-track {
-      overflow-x: auto;
-      white-space: nowrap; }
+    .matching__actions-inner {
+      overflow: hidden; }
+      .matching__actions-inner-track {
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-bottom: -50px;
+        padding-bottom: 50px; }
     .matching__actions-group {
       display: -webkit-inline-box;
       display: -ms-inline-flexbox;
@@ -1956,8 +1961,8 @@ li, .matching__profile-btn, .form label, .form textarea,
   transform: scale(1.1); }
   @media screen and (min-width: 768px) {
     .popup-gallery {
-      opacity: 0;
-      pointer-events: none; } }
+      /* opacity: 0;
+        pointer-events: none; */ } }
   .popup-gallery__header {
     padding: 2.083rem 0;
     text-align: center; }
@@ -2052,6 +2057,9 @@ li, .matching__profile-btn, .form label, .form textarea,
       background-size: cover;
       background-position: center;
       position: relative; }
+      @media screen and (min-width: 768px) {
+        .popup-gallery__slider-item {
+          background-size: auto 100%; } }
       .popup-gallery__slider-item:after {
         content: "";
         position: absolute;
@@ -2071,11 +2079,9 @@ li, .matching__profile-btn, .form label, .form textarea,
     pointer-events: all; }
     @media screen and (min-width: 768px) {
       .popup-gallery--active {
-        opacity: 0;
-        pointer-events: none;
-        -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        transform: scale(1.1); } }
+        /* opacity: 0;
+            pointer-events: none;
+            transform: scale(1.1); */ } }
 
 .container {
   padding: 0 25px; }

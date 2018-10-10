@@ -1,6 +1,6 @@
 class Gallery {
     constructor() {
-        this.$btn = $(".matching__profile-gallery-trigger");
+        this.$btn = $(".matching__profile-gallery-trigger, .matching__profile-count");
         this.$close = $(".popup-gallery__btn");
         this.$popup = $(".popup-gallery");
         this.$slider = $(".popup-gallery__slider");

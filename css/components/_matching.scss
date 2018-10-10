@@ -353,6 +353,7 @@
             border: 1px solid $color-white;
             border-radius: 3px;
             background-color: rgba($color-black-full, .2);
+            cursor: pointer;
             @include atMedium {
                 border-width: 2px;
                 height: 3.125rem;
@@ -514,9 +515,13 @@
         }
 
         &-inner {
+            overflow: hidden;
+
             &-track {
                 overflow-x: auto;
                 white-space: nowrap;
+                margin-bottom: -50px;
+                padding-bottom: 50px;
             }
         }
 

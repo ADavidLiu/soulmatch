@@ -34,6 +34,8 @@ class Matchings {
             this._$slider.jTinder("like");
         }); */
 
+        $(".matching__actions-inner-track").overlayScrollbars({});
+
         this._$interestsContainer = $(".matching__actions .container");
         this._$interestsInner = $(".matching__actions-inner");
         this._$interestsTrack = $(".matching__actions-inner-track");

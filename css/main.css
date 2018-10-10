@@ -843,8 +843,12 @@ li, .matching__profile-btn, .form label, .form textarea,
       .matching__actions-inner-track {
         overflow-x: auto;
         white-space: nowrap;
-        margin-bottom: -50px;
-        padding-bottom: 50px; }
+        /* margin-bottom: -50px;
+                padding-bottom: 50px; */ }
+    .matching__actions .os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
+      background-color: rgba(255, 255, 255, 0.25); }
+      .matching__actions .os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle:hover {
+        background-color: rgba(255, 255, 255, 0.5); }
     .matching__actions-group {
       display: -webkit-inline-box;
       display: -ms-inline-flexbox;

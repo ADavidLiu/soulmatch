@@ -520,8 +520,16 @@
             &-track {
                 overflow-x: auto;
                 white-space: nowrap;
-                margin-bottom: -50px;
-                padding-bottom: 50px;
+                /* margin-bottom: -50px;
+                padding-bottom: 50px; */
+            }
+        }
+
+        .os-theme-dark>.os-scrollbar>.os-scrollbar-track>.os-scrollbar-handle {
+            background-color: rgba($color-white, .25);
+
+            &:hover {
+                background-color: rgba($color-white, .5);
             }
         }
 

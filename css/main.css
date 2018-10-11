@@ -371,7 +371,8 @@ li, .matching__profile-btn, .form label, .form textarea,
         box-shadow: 0px 10px 20px 0px rgba(14, 14, 15, 0.06);
         width: 100%;
         max-width: 430px;
-        margin: 0 auto; } }
+        margin: 0 auto;
+        overflow: visible; } }
   .matching__nav {
     -webkit-box-align: center;
     -ms-flex-align: center;

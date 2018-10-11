@@ -412,8 +412,8 @@
         }
 
         &-info {
-            background-image: linear-gradient(to top, $color-black-full, transparent);
             padding: 8.333rem 0 2.708rem 0;
+            margin-bottom: 4.75rem;
             position: absolute;
             z-index: 2;
             bottom: 0;
@@ -422,6 +422,7 @@
             height: auto;
             @include atMedium {
                 padding: 1.25rem 0;
+                margin-bottom: 0;
                 background-color: $color-white;
                 background-image: none;
             }
@@ -434,6 +435,20 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                bottom: -4.75rem;
+                left: 0;
+                width: 100%;
+                height: calc(100% + 4.75rem);
+                background-image: linear-gradient(to top, $color-black-full, transparent);
+                pointer-events: none;
+                @include atMedium {
+                    display: none;
+                }
             }
         }
 
@@ -502,8 +517,12 @@
     }
 
     &__actions {
-        background-color: $color-black;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
         @include atMedium {
+            position: static;
             background-image: linear-gradient(to top, $color-primary-drk, $color-primary);
         }
         @include atLarge {
@@ -520,8 +539,6 @@
             &-track {
                 overflow-x: auto;
                 white-space: nowrap;
-                /* margin-bottom: -50px;
-                padding-bottom: 50px; */
             }
         }
 

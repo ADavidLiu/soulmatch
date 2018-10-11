@@ -124,12 +124,9 @@
             &-dot {
                 display: block;
                 background-color: $color-gray-drk;
-                height: .75rem;
-                width: .75rem;
-                border-radius: 2px;
-                @include atExtrasmall {
-                    border-radius: 1px;
-                }
+                height: .55rem;
+                width: .55rem;
+                border-radius: 1px;
 
                 & + & {
                     margin-top: .5rem;

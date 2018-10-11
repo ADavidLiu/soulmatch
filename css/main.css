@@ -2318,13 +2318,14 @@ li, .matching__profile-btn, .form label, .form textarea,
   .header__messages {
     display: inline-block;
     position: relative;
-    margin-left: 1.25rem;
-    margin-right: 1.667rem;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
     padding: 5px;
     border-radius: .5rem;
     border: 1px solid #cfcfcf; }
     @media screen and (min-width: 768px) {
       .header__messages {
+        margin-left: 1.25rem;
         margin-right: 0;
         border: 0;
         padding: 0;

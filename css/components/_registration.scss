@@ -46,6 +46,28 @@
         @include atMedium {
             margin: -.75rem;
         }
+
+        input {
+            display: none;
+
+            &:checked {
+                & + label {
+                    .registration__interest {
+                        &-icon {
+                            filter: brightness(0) invert(1);
+                        }
+        
+                        &-label {
+                            color: $color-white;
+                        }
+                    }
+        
+                    &:before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
     }
 
     &__interest {
@@ -93,22 +115,6 @@
             @include atMedium {
                 height: 4.0625rem;
                 margin-bottom: .9375rem;
-            }
-        }
-
-        &--active {
-            .registration__interest {
-                &-icon {
-                    filter: brightness(0) invert(1);
-                }
-
-                &-label {
-                    color: $color-white;
-                }
-            }
-
-            &:before {
-                opacity: 1;
             }
         }
     }

@@ -1,6 +1,7 @@
 class Matchings {
-    constructor() {
+    constructor(swipesCount) {
         this._$window = $(window);
+        this._swipesCount = swipesCount;
 
         this._$slider = $(".matching__slider-list");
         this._$slider.slick({
@@ -23,16 +24,17 @@ class Matchings {
             ]
         });
 
-        /* this._$slider.jTinder();
-        this._$btnPrev = $(".matching__slider-arrow--prev");
-        this._$btnNext = $(".matching__slider-arrow--next");
-        
-        this._$btnPrev.click(() => {
-            this._$slider.jTinder("dislike");
+        this._$slider.on("afterChange", (slick, currentSlide) => {
+            const currentCount = $(".header__swipes span").text();
+            let newCount = parseInt(currentCount) - 1;
+            $(".header__swipes span").text(newCount)
+            if (newCount <= 0) {
+                newCount = 0;
+                $(".header__swipes span").text(0);
+                this._$slider.addClass("matching__slider-list--disabled");
+            }
+            this._swipesCount.checkCount(newCount);
         });
-        this._$btnNext.click(() => {
-            this._$slider.jTinder("like");
-        }); */
 
         $(".matching__actions-inner-track").overlayScrollbars({});
 

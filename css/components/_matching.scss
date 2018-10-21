@@ -141,13 +141,14 @@
         &-list {
             position: relative;
             background-color: $color-white;
-        }
 
-        &-item {
-            /* position: absolute;
-            z-index: 1;
-            top: 0;
-            left: 0; */
+            &--disabled {
+                .slick {
+                    &-track {
+                        transform: none !important;
+                    }
+                }
+            }
         }
 
         &-controls {

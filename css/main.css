@@ -467,11 +467,10 @@ li, .matching__profile-btn, .form label, .form textarea,
     .matching__slider-list {
       position: relative;
       background-color: #ffffff; }
-    .matching__slider-item {
-      /* position: absolute;
-            z-index: 1;
-            top: 0;
-            left: 0; */ }
+      .matching__slider-list--disabled .slick-track {
+        -webkit-transform: none !important;
+        -ms-transform: none !important;
+        transform: none !important; }
     .matching__slider-controls {
       display: none; }
       @media screen and (min-width: 992px) {
@@ -1353,6 +1352,15 @@ li, .matching__profile-btn, .form label, .form textarea,
     @media screen and (min-width: 768px) {
       .registration__interests {
         margin: -.75rem; } }
+    .registration__interests input {
+      display: none; }
+      .registration__interests input:checked + label .registration__interest-icon {
+        -webkit-filter: brightness(0) invert(1);
+        filter: brightness(0) invert(1); }
+      .registration__interests input:checked + label .registration__interest-label {
+        color: #ffffff; }
+      .registration__interests input:checked + label:before {
+        opacity: 1; }
   .registration__interest {
     margin: 1rem;
     border-radius: 5px;
@@ -1397,13 +1405,6 @@ li, .matching__profile-btn, .form label, .form textarea,
         .registration__interest-icon {
           height: 4.0625rem;
           margin-bottom: .9375rem; } }
-    .registration__interest--active .registration__interest-icon {
-      -webkit-filter: brightness(0) invert(1);
-      filter: brightness(0) invert(1); }
-    .registration__interest--active .registration__interest-label {
-      color: #ffffff; }
-    .registration__interest--active:before {
-      opacity: 1; }
   .registration__interest-description {
     border: 1px solid #c3c3c3;
     border-radius: 5px; }
@@ -2305,7 +2306,10 @@ li, .matching__profile-btn, .form label, .form textarea,
   .header__swipes {
     background-color: #45e967;
     border-radius: .5rem;
-    padding: .75rem 1.4583rem; }
+    padding: .75rem 1.4583rem;
+    -webkit-transition: all .25s;
+    -o-transition: all .25s;
+    transition: all .25s; }
     @media screen and (min-width: 768px) {
       .header__swipes {
         padding: .5rem 1.333rem; } }
@@ -2316,6 +2320,10 @@ li, .matching__profile-btn, .form label, .form textarea,
     @media screen and (min-width: 992px) {
       .header__swipes p {
         font-size: 1.0625rem; } }
+    .header__swipes--medium {
+      background-color: #ff7220; }
+    .header__swipes--low {
+      background-color: #ff2020; }
   .header__messages {
     display: inline-block;
     position: relative;

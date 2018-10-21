@@ -2,6 +2,7 @@
 //@prepros-prepend "modules/matchings.js";
 //@prepros-prepend "modules/popupManager.js";
 //@prepros-prepend "modules/gallery.js";
+//@prepros-prepend "modules/swipesCount.js";
 
 $(document).ready(function () {
     
@@ -9,8 +10,13 @@ $(document).ready(function () {
         const menu = new Menu();
     }
 
+    if ($(".header__swipes").length > 0  && $(".matching__slider").length === 0) {
+        const swipesCount = new SwipesCount();
+    }
+
     if ($(".matching__slider").length > 0) {
-        const matchings = new Matchings();
+        const swipesCount = new SwipesCount();
+        const matchings = new Matchings(swipesCount);
     }
 
     if ($(".popup").length > 0) {
@@ -33,13 +39,6 @@ $(document).ready(function () {
             } else {
                 $label.text("INVITE");
             }
-        });
-    }
-
-    if ($(".registration__interest").length > 0) {
-        $(".registration__interest").click(e => {
-            const $this = $(e.currentTarget);
-            $this.toggleClass("registration__interest--active");
         });
     }
 
@@ -184,7 +183,7 @@ $(document).ready(function () {
     if ($(".range").length > 0) {
         const slider = document.getElementById("range");
         noUiSlider.create(slider, {
-            start: [21, 33],
+            start: [18, 38],
             connect: true,
             tooltips: true,
             format: {
@@ -195,11 +194,28 @@ $(document).ready(function () {
                     return value.replace(',-', '');
                 }
             },
-            step: 1,
+            step: 20,
             range: {
                 "min": 18,
-                "max": 50
+                "max": 100
             }
+        });
+        let prevValues = [18, 38];
+        slider.noUiSlider.on("slide", (values, handle, unencoded, tap, positions) => {
+            if (handle === 0) {
+                if (values[0] < prevValues[0]) {
+                    slider.noUiSlider.set([values[0], parseInt(values[1]) - 20]);
+                } else {
+                    slider.noUiSlider.set([values[0], parseInt(values[1]) + 20]);
+                }
+            } else {
+                if (values[1] < prevValues[1]) {
+                    slider.noUiSlider.set([parseInt(values[0]) - 20, values[1]]);
+                } else {
+                    slider.noUiSlider.set([parseInt(values[0]) + 20, values[1]]);
+                }
+            }
+            prevValues = values;
         });
     }
     

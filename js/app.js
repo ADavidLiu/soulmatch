@@ -182,6 +182,9 @@ $(document).ready(function () {
 
     if ($(".range").length > 0) {
         const slider = document.getElementById("range");
+        const ageMin = $("#age_min");
+        const ageMax = $("#age_max");
+
         noUiSlider.create(slider, {
             start: [18, 38],
             connect: true,
@@ -201,21 +204,35 @@ $(document).ready(function () {
             }
         });
         let prevValues = [18, 38];
+        let newMinVal = 0;
+        let newMaxVal = 0;
+        ageMin.val(prevValues[0]);
+        ageMax.val(prevValues[1]);
         slider.noUiSlider.on("slide", (values, handle, unencoded, tap, positions) => {
             if (handle === 0) {
                 if (values[0] < prevValues[0]) {
                     slider.noUiSlider.set([values[0], parseInt(values[1]) - 20]);
+                    newMinVal = values[0];
+                    newMaxVal = parseInt(values[1]) - 20;
                 } else {
                     slider.noUiSlider.set([values[0], parseInt(values[1]) + 20]);
+                    newMinVal = values[0];
+                    newMaxVal = parseInt(values[1]) + 20;
                 }
             } else {
                 if (values[1] < prevValues[1]) {
                     slider.noUiSlider.set([parseInt(values[0]) - 20, values[1]]);
+                    newMinVal = parseInt(values[0]) - 20;
+                    newMaxVal = values[1];
                 } else {
                     slider.noUiSlider.set([parseInt(values[0]) + 20, values[1]]);
+                    newMinVal = parseInt(values[0]) + 20;
+                    newMaxVal = values[1];
                 }
             }
             prevValues = values;
+            ageMin.val(parseInt(newMinVal));
+            ageMax.val(parseInt(newMaxVal));
         });
     }
     

@@ -241,29 +241,46 @@ select {
         font-size: 1rem; } }
 
 .paragraph, p,
-li, .matching__profile-btn, .form label, .form textarea,
+li, .matching__profile-btn, form label,
+.form label, form textarea,
+form select,
+form input,
+.form textarea,
 .form select,
-.form input, .form__group small {
+.form input, form__group small,
+.form__group small {
   font-family: "Quicksand", "Helvetica", "Arial", sans-serif;
   color: #5c6167;
   font-weight: 400;
   font-size: 1.4583rem; }
   @media screen and (min-width: 768px) {
     .paragraph, p,
-    li, .matching__profile-btn, .form label, .form textarea,
+    li, .matching__profile-btn, form label,
+    .form label, form textarea,
+    form select,
+    form input,
+    .form textarea,
     .form select,
-    .form input, .form__group small {
+    .form input, form__group small,
+    .form__group small {
       font-size: 1.1875rem; } }
   @media screen and (min-width: 992px) {
     .paragraph, p,
-    li, .matching__profile-btn, .form label, .form textarea,
+    li, .matching__profile-btn, form label,
+    .form label, form textarea,
+    form select,
+    form input,
+    .form textarea,
     .form select,
-    .form input, .form__group small {
+    .form input, form__group small,
+    .form__group small {
       font-size: .75rem; } }
-  .paragraph--smaller, .form__group small {
+  .paragraph--smaller, form__group small,
+  .form__group small {
     font-size: 1.167rem; }
     @media screen and (min-width: 768px) {
-      .paragraph--smaller, .form__group small {
+      .paragraph--smaller, form__group small,
+      .form__group small {
         font-size: .875rem; } }
   @media screen and (min-width: 992px) {
     .paragraph--small {
@@ -283,19 +300,29 @@ li, .matching__profile-btn, .form label, .form textarea,
     @media screen and (min-width: 768px) {
       .paragraph--small-4 {
         font-size: .75rem; } }
-  .paragraph--small-alt, .form label {
+  .paragraph--small-alt, form label,
+  .form label {
     font-size: 1.25rem; }
-  .paragraph--med, .form textarea,
+  .paragraph--med, form textarea,
+  form select,
+  form input,
+  .form textarea,
   .form select,
   .form input {
     font-size: 1.667rem; }
     @media screen and (min-width: 768px) {
-      .paragraph--med, .form textarea,
+      .paragraph--med, form textarea,
+      form select,
+      form input,
+      .form textarea,
       .form select,
       .form input {
         font-size: 1.25rem; } }
     @media screen and (min-width: 992px) {
-      .paragraph--med, .form textarea,
+      .paragraph--med, form textarea,
+      form select,
+      form input,
+      .form textarea,
       .form select,
       .form input {
         font-size: 1rem; } }
@@ -1059,15 +1086,20 @@ li, .matching__profile-btn, .form label, .form textarea,
       .loading__logo {
         max-width: 17.5rem; } }
 
+form label,
 .form label {
   font-weight: 300;
   color: #ababab;
   letter-spacing: 0; }
   @media screen and (min-width: 768px) {
+    form label,
     .form label {
       font-size: .75rem;
       margin-bottom: 0; } }
 
+form textarea,
+form select,
+form input,
 .form textarea,
 .form select,
 .form input {
@@ -1089,70 +1121,114 @@ li, .matching__profile-btn, .form label, .form textarea,
   font-weight: 400;
   letter-spacing: 0; }
   @media screen and (min-width: 768px) {
+    form textarea,
+    form select,
+    form input,
     .form textarea,
     .form select,
     .form input {
       -webkit-padding-after: .75rem;
       padding-block-end: .75rem; } }
+  form textarea:focus,
+  form select:focus,
+  form input:focus,
   .form textarea:focus,
   .form select:focus,
   .form input:focus {
     border-color: #268cf7;
     outline: none; }
+  form textarea::-webkit-input-placeholder,
+  form select::-webkit-input-placeholder,
+  form input::-webkit-input-placeholder,
   .form textarea::-webkit-input-placeholder,
   .form select::-webkit-input-placeholder,
   .form input::-webkit-input-placeholder {
     color: #ababab; }
+  form textarea:-ms-input-placeholder,
+  form select:-ms-input-placeholder,
+  form input:-ms-input-placeholder,
   .form textarea:-ms-input-placeholder,
   .form select:-ms-input-placeholder,
   .form input:-ms-input-placeholder {
     color: #ababab; }
+  form textarea::-ms-input-placeholder,
+  form select::-ms-input-placeholder,
+  form input::-ms-input-placeholder,
   .form textarea::-ms-input-placeholder,
   .form select::-ms-input-placeholder,
   .form input::-ms-input-placeholder {
     color: #ababab; }
+  form textarea::placeholder,
+  form select::placeholder,
+  form input::placeholder,
   .form textarea::placeholder,
   .form select::placeholder,
   .form input::placeholder {
     color: #ababab; }
+  form textarea + input,
+  form select + input,
+  form input + input,
   .form textarea + input,
   .form select + input,
   .form input + input {
     margin-top: 2.083rem; }
     @media screen and (min-width: 768px) {
+      form textarea + input,
+      form select + input,
+      form input + input,
       .form textarea + input,
       .form select + input,
       .form input + input {
         margin-top: 1.5625rem; } }
     @media screen and (min-width: 992px) {
+      form textarea + input,
+      form select + input,
+      form input + input,
       .form textarea + input,
       .form select + input,
       .form input + input {
         margin-top: 1.125rem; } }
+  form textarea.error,
+  form select.error,
+  form input.error,
   .form textarea.error,
   .form select.error,
   .form input.error {
     border-color: #ff2020; }
 
+form textarea,
 .form textarea {
   height: 15rem; }
   @media screen and (min-width: 768px) {
+    form textarea,
     .form textarea {
       height: 11.25rem; } }
 
+form__group,
 .form__group {
   position: relative; }
+  form__group-footer,
   .form__group-footer {
     padding-top: 8px;
     text-align: right; }
+  form__group small,
   .form__group small {
     color: #ababab; }
-  .form__group + .form__group {
+  form__group + form__group,
+  .form__group + form__group, form__group +
+  .form__group,
+  .form__group +
+  .form__group {
     margin-top: 4rem; }
     @media screen and (min-width: 768px) {
-      .form__group + .form__group {
+      form__group + form__group,
+      .form__group + form__group, form__group +
+      .form__group,
+      .form__group +
+      .form__group {
         margin-top: 3rem; } }
 
+form__icon,
 .form__icon {
   position: absolute;
   top: 50%;
@@ -1163,9 +1239,11 @@ li, .matching__profile-btn, .form label, .form textarea,
   cursor: pointer;
   height: 1.25rem; }
   @media screen and (min-width: 768px) {
+    form__icon,
     .form__icon {
       height: .9375rem; } }
 
+form__feedback,
 .form__feedback {
   display: inline-block;
   position: absolute;
@@ -1335,7 +1413,7 @@ li, .matching__profile-btn, .form label, .form textarea,
       margin: 2.5rem 0; }
       @media screen and (min-width: 768px) {
         .registration__form--alt {
-          max-resolution: 1.875rem 0; } }
+          margin: 1.875rem 0; } }
   .registration__interests {
     display: -webkit-box;
     display: -ms-flexbox;

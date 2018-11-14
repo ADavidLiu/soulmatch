@@ -181,12 +181,23 @@ $(document).ready(function () {
     }
 
     if ($(".range").length > 0) {
-        const slider = document.getElementById("range");
+        const $slider = $("#range");
+        const slider = $slider[0];
+        /* Added reference to inputs */
         const ageMin = $("#age_min");
         const ageMax = $("#age_max");
 
+        /* Read initial values, if available */
+        let initialMin = $slider.attr("data-intial-min");
+        let initialMax = $slider.attr("data-intial-max");
+
+        if (initialMin == undefined && initialMax == undefined) {
+            initialMin = 18;
+            initialMax = 38;
+        }
+
         noUiSlider.create(slider, {
-            start: [18, 38],
+            start: [initialMin, initialMax],
             connect: true,
             tooltips: true,
             format: {
@@ -231,6 +242,7 @@ $(document).ready(function () {
                 }
             }
             prevValues = values;
+            /* Updating inputs' values */
             ageMin.val(parseInt(newMinVal));
             ageMax.val(parseInt(newMaxVal));
         });

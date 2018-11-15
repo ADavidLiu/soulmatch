@@ -58,6 +58,7 @@ $(document).ready(function () {
         });
     }
 
+    /*
     if ($(".registration__photos").length > 0) {
         let offset = 0;
         const $window = $(window);
@@ -174,11 +175,11 @@ $(document).ready(function () {
             const $item = $this.parent();
             const index = $item.index();
             $(".registration__photos-item").eq(index).fadeOut("fast", () => {
-                /* $(".registration__photos-item").eq(index).remove(); */
                 $slider.slick("slickRemove", index);
             });
         });
     }
+    */
 
     if ($(".range").length > 0) {
         const $slider = $("#range");
@@ -188,8 +189,8 @@ $(document).ready(function () {
         const ageMax = $("#age_max");
 
         /* Read initial values, if available */
-        let initialMin = $slider.attr("data-intial-min");
-        let initialMax = $slider.attr("data-intial-max");
+        let initialMin = $slider.attr("data-initial-min");
+        let initialMax = $slider.attr("data-initial-max");
 
         if (initialMin == undefined && initialMax == undefined) {
             initialMin = 18;

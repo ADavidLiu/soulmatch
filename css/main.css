@@ -1569,6 +1569,8 @@ form__feedback,
       .registration__photos-browse {
         margin-top: .75rem;
         margin-bottom: 1.5rem; } }
+    .registration__photos-browse input, .registration__photos-browse-input {
+      display: none; }
     .registration__photos-browse-divider {
       margin: 0 1rem; }
       @media screen and (min-width: 768px) {
@@ -1580,7 +1582,8 @@ form__feedback,
       width: 20rem;
       border-radius: 5px;
       white-space: nowrap;
-      cursor: pointer; }
+      cursor: pointer;
+      text-align: center; }
       @media screen and (min-width: 768px) {
         .registration__photos-browse-btn {
           padding: 1rem 0;

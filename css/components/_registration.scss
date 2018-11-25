@@ -205,6 +205,11 @@
             margin-bottom: 1.5rem;
         }
 
+        input,
+        &-input {
+            display: none;
+        }
+
         &-divider {
             margin: 0 1rem;
             @include atMedium {
@@ -219,6 +224,7 @@
             border-radius: 5px;
             white-space: nowrap;
             cursor: pointer;
+            text-align: center;
             @include atMedium {
                 padding: 1rem 0;
                 width: 15rem;

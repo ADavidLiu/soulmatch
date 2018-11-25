@@ -58,7 +58,7 @@ $(document).ready(function () {
         });
     }
 
-    /*
+    
     if ($(".registration__photos").length > 0) {
         let offset = 0;
         const $window = $(window);
@@ -166,20 +166,42 @@ $(document).ready(function () {
             ]
         }
 
-        const $slider = $(".registration__photos");
-        $slider.slick(initialOpts);
-
-        const $delete = $(".registration__photos-item-delete");
-        $delete.click(e => {
+        const deleteSlide = e => {
             const $this = $(e.currentTarget);
             const $item = $this.parent();
             const index = $item.index();
             $(".registration__photos-item").eq(index).fadeOut("fast", () => {
                 $slider.slick("slickRemove", index);
             });
+        }
+
+        const $slider = $(".registration__photos");
+        $slider.slick(initialOpts);
+
+        const $delete = $(".registration__photos-item-delete");
+        $delete.click(deleteSlide);
+
+        const readURL = input => {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const src = e.target.result;
+                    const newSlide = `<div class="registration__photos-item" style="background-image: url('${src}');">
+                    <img src="images/i-delete.svg" alt="Delete" class="registration__photos-item-delete">
+                    </div>`;
+                    const $newSlide = $(newSlide);
+                    $newSlide.find(".registration__photos-item-delete").click(deleteSlide);
+                    $slider.slick("slickAdd", $newSlide, 0, true);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $(".registration__photos-browse-input").change(function() {
+            readURL(this);
         });
     }
-    */
+   
 
     if ($(".range").length > 0) {
         const $slider = $("#range");

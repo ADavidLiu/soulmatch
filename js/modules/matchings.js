@@ -24,16 +24,20 @@ class Matchings {
             ]
         });
 
-        this._$slider.on("afterChange", (slick, currentSlide) => {
-            const currentCount = $(".header__swipes span").text();
-            let newCount = parseInt(currentCount) - 1;
-            $(".header__swipes span").text(newCount)
-            if (newCount <= 0) {
-                newCount = 0;
-                $(".header__swipes span").text(0);
-                this._$slider.addClass("matching__slider-list--disabled");
+        this._$slider.on("afterChange", (e, slick, currentSlide) => {
+            const $currentSlide = $(".matching__slider-item").eq(currentSlide + 1);
+            if (!$currentSlide.hasClass("matching__slider-item--viewed")) {
+                const currentCount = $(".header__swipes span").text();
+                let newCount = parseInt(currentCount) - 1;
+                $(".header__swipes span").text(newCount)
+                if (newCount <= 0) {
+                    newCount = 0;
+                    $(".header__swipes span").text(0);
+                    this._$slider.addClass("matching__slider-list--disabled");
+                }
+                this._swipesCount.checkCount(newCount);
             }
-            this._swipesCount.checkCount(newCount);
+            $currentSlide.addClass("matching__slider-item--viewed");
         });
 
         $(".matching__actions-inner-track").overlayScrollbars({});
